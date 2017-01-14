@@ -16,6 +16,7 @@ float y1,y2,y3,y4,y5,y6,y7,y8;
 
 int irrecv;
 float setpoint,setpoint2;
+float a,b,c,d,e,f,g,h;
 
 float errpoint,getTemp,fin ;
 float check;
@@ -31,7 +32,7 @@ void loop() {
 
   //gettemp = Serial.read();
 
-  float getTemp = 32.0;
+  float getTemp = 24.0;
   
   errpoint = getTemp-28;
   
@@ -49,59 +50,60 @@ void loop() {
   
   //x = myarray[y1,y2,y3,y4,y5,y6,y7,y8];
   for(int i=0; i<8; i++){
-    Serial.println(x[i]);
+    //Serial.println(x[i]);
     check = x[i];
     if (x[i]<=1 && x[i]>=0){
       switch(i){
-        case 0: setpoint = x[i]*24;
+        case 0: 
+          a = x[i]*28;
        // Serial.println(setpoint);
               break;
         
         case 1: 
-          setpoint2 = x[i]*26;
+          b = x[i]*28;
          // Serial.println(setpoint2);
               break;
         
         case 2:
-          setpoint = x[i]*26;
+          c = x[i]*28;
          // Serial.println(setpoint);
               break;
     
         
         case 3: 
-          setpoint2 = x[i]*28;
+          d = x[i]*28;
          // Serial.println(setpoint2);
             break;
         
         case 4: 
-          setpoint = x[i]*28;
-          Serial.println(setpoint);
+          e = x[i]*26;
+          
             break;
         
         case 5: 
-          setpoint2 = x[i]*28;
+          f = x[i]*26;
          // Serial.println(setpoint2);
             break;
         
         case 6: 
-          setpoint2 = x[i]*26;
-          Serial.println(setpoint2);
+          g = x[i]*26;
+          
             break;
         
         case 7: 
-          setpoint2 = x[i]*26;
+          h = x[i]*24;
          // Serial.println(setpoint2);
             break;   
       }
     }
-      
-      fin = setpoint + setpoint2;
+
+      fin = a+b+c+d+e+f+g+h;
       
     
       
   }
-      Serial.println(setpoint);
-      Serial.println(setpoint2);
+      //Serial.println(setpoint);
+      //Serial.println(setpoint2);
       Serial.println(fin);
       Serial.println("=======");
       
